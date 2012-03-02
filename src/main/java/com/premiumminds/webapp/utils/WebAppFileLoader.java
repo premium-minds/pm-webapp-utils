@@ -76,11 +76,18 @@ public class WebAppFileLoader {
 		if(stream==null) throw new FileNotFoundException();
 		return stream;
 	}
-	private InputStream loadContextScheme(URI uri){
+	private InputStream loadContextScheme(URI uri) throws FileNotFoundException{
 		String filepath = uri.getSchemeSpecificPart();
 		
-		if(context==null) throw new 
+		if(context==null) throw new RuntimeException("to load from the context, a context must be provided");
 		
-		return null;
+	    String realPath = context.getRealPath("/");
+	    String fileSep = System.getProperty("file.separator");
+
+	    if(realPath==null) throw new RuntimeException("couldn't get the real path from context");
+	    //Make sure the real path ends with a file separator character ('/')
+	    if (! realPath.endsWith(fileSep)){ realPath = realPath + fileSep; }
+	    
+	    return new FileInputStream(realPath + filepath);		
 	}
 }

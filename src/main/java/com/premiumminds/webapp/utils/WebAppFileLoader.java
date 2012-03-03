@@ -11,9 +11,9 @@ import javax.servlet.ServletContext;
 /**
  * Class to load resources of web applications
  * It can load from 
- *  - the application context (context:///path/to/file),
- *  - the application classpath (classpath://com/package/ResourceName.txt),
- *  - the filesystem (filesystem:///path/to/file)
+ *  - the application context (context:/path/to/file),
+ *  - the application classpath (classpath:com/package/ResourceName.txt),
+ *  - the filesystem (filesystem:/path/to/file)
  * 
  * @author coolzero
  *
@@ -30,7 +30,7 @@ public class WebAppFileLoader {
 	 * Create a file loader with a context 
 	 * 
 	 * @param filename - the URI to the file
-	 * @param context - the servlet context needed for context://
+	 * @param context - the servlet context needed for context:/
 	 */
 	public WebAppFileLoader(String filename, ServletContext context){
 		this.filename = filename;
@@ -76,11 +76,20 @@ public class WebAppFileLoader {
 		if(stream==null) throw new FileNotFoundException();
 		return stream;
 	}
-	private InputStream loadContextScheme(URI uri){
+	private InputStream loadContextScheme(URI uri) throws FileNotFoundException{
 		String filepath = uri.getSchemeSpecificPart();
 		
-		if(context==null) throw new 
+		if(context==null) throw new RuntimeException("WebContext is null");
 		
-		return null;
+	    String realPath = context.getRealPath("/");
+	    String fileSep = System.getProperty("file.separator");
+
+	    //Make sure the real path ends with a file separator character ('/')
+	    if (realPath != null && (! realPath.endsWith(fileSep))){
+	          realPath = realPath + fileSep;
+	    }
+	    if(filepath.startsWith(fileSep)) filepath = filepath.substring(1);
+		
+	    return new FileInputStream(realPath+filepath);
 	}
 }

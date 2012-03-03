@@ -1,5 +1,6 @@
 package com.premiumminds.webapp.utils;
 
+import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 
 import junit.framework.Test;
@@ -11,7 +12,7 @@ public class WebAppFileLoaderTest extends TestCase {
 		return new TestSuite(WebAppFileLoaderTest.class);
 	}
 	
-	public void testFilename(){
+	public void testFilenotfound(){
 		String[] filenames = 
 			{
 				"filesystem:///path/to/file.txt", 
@@ -23,7 +24,27 @@ public class WebAppFileLoaderTest extends TestCase {
 			WebAppFileLoader fileLoader = new WebAppFileLoader(filename);
 			try {
 				fileLoader.load();
+				fail("should throw FileNotFound");
 			} catch (URISyntaxException e) {
+				fail(e.getMessage());
+			} catch (FileNotFoundException e) {
+			}
+		}
+	}
+	
+	public void testSuccess(){
+		String[] filenames = 
+			{
+				"classpath:/com/premiumminds/webapp/utils/teste.txt"
+			};
+		
+		for(String filename : filenames){
+			WebAppFileLoader fileLoader = new WebAppFileLoader(filename);
+			try {
+				fileLoader.load();
+			} catch (URISyntaxException e) {
+				fail(e.getMessage());
+			} catch (FileNotFoundException e) {
 				fail(e.getMessage());
 			}
 		}

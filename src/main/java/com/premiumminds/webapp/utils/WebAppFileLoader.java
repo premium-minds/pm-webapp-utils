@@ -12,7 +12,7 @@ import javax.servlet.ServletContext;
  * Class to load resources of web applications
  * It can load from 
  *  - the application context (context:/path/to/file),
- *  - the application classpath (classpath:com/package/ResourceName.txt),
+ *  - the application classpath (classpath:/com/package/ResourceName.txt),
  *  - the filesystem (filesystem:/path/to/file)
  * 
  * @author coolzero
@@ -72,7 +72,7 @@ public class WebAppFileLoader {
 	}
 	private InputStream loadClasspathScheme(URI uri) throws FileNotFoundException{
 		String filepath = uri.getSchemeSpecificPart();
-		InputStream stream = this.getClass().getClassLoader().getResourceAsStream(filepath);
+		InputStream stream = WebAppFileLoader.class.getResourceAsStream(filepath);
 		if(stream==null) throw new FileNotFoundException();
 		return stream;
 	}
@@ -87,6 +87,7 @@ public class WebAppFileLoader {
 	    if(realPath==null) throw new RuntimeException("couldn't get the real path from context");
 	    //Make sure the real path ends with a file separator character ('/')
 	    if (! realPath.endsWith(fileSep)){ realPath = realPath + fileSep; }
+	    if (filepath.startsWith(fileSep)){ filepath = filepath.substring(1); }
 	    
 	    return new FileInputStream(realPath + filepath);		
 	}

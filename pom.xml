@@ -40,6 +40,14 @@
 	    <version>1.4.4</version>
 	    <scope>runtime</scope>
 	</dependency>
-		
+
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>test-jetty-servlet</artifactId>
+		<version>7.6.1.v20120215</version>
+	    <scope>test</scope>
+	</dependency>
+            
   </dependencies>
+
 </project>

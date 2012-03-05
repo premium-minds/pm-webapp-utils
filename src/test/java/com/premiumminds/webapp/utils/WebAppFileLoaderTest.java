@@ -46,10 +46,10 @@ public class WebAppFileLoaderTest extends TestCase {
 	}
 	
 	public void testSuccess(){
-		WebAppFileLoader fileLoader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/teste.txt");
+		WebAppFileLoader fileLoader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/WebAppFileLoaderTestFile.txt");
 		loadSuccess(fileLoader);
 		
-		URL url = this.getClass().getResource("/com/premiumminds/webapp/utils/teste.txt");
+		URL url = this.getClass().getResource("/com/premiumminds/webapp/utils/WebAppFileLoaderTestFile.txt");
 		fileLoader = new WebAppFileLoader("filesystem:"+url.getPath());
 		loadSuccess(fileLoader);
 	}
@@ -69,7 +69,7 @@ public class WebAppFileLoaderTest extends TestCase {
 		
 		URL url = this.getClass().getResource("/");
 		tester.setResourceBase(url.getPath());
-		WebAppFileLoader fileloader = new WebAppFileLoader("context:/com/premiumminds/webapp/utils/teste.txt", tester.getContext().getServletContext());
+		WebAppFileLoader fileloader = new WebAppFileLoader("context:/com/premiumminds/webapp/utils/WebAppFileLoaderTestFile.txt", tester.getContext().getServletContext());
 		loadSuccess(fileloader);
 	}
 }

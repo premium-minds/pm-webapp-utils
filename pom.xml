@@ -4,7 +4,7 @@
 
   <groupId>com.premiumminds</groupId>
   <artifactId>webapp-utils</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>webapp-utils</name>
@@ -31,6 +31,7 @@
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
 		<version>1.2.16</version>
+	    <scope>runtime</scope>
 	</dependency>
 	
 	<!-- MAILER -->
@@ -49,5 +50,8 @@
 	</dependency>
             
   </dependencies>
+  <build>
+  	<finalName>${artifactId}</finalName>
+  </build>
 
 </project>

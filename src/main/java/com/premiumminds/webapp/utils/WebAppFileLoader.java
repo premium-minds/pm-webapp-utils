@@ -40,7 +40,7 @@ public class WebAppFileLoader {
 	/**
 	 * Create a file loader,
 	 * 
-	 * BUT THIS CAN'T HAVE USE THE CONTEXT!!!
+	 * BUT THIS CAN'T USE THE CONTEXT!!!
 	 * 
 	 * @param filename - the URI to the file
 	 */

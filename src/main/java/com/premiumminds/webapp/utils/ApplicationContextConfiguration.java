@@ -40,7 +40,7 @@ public class ApplicationContextConfiguration extends Properties {
 	 * @param is InputStream with the configuration
 	 */
 	public static void configure(InputStream is){
-		instance = new ApplicationContextConfiguration();
+		if(instance==null) instance = new ApplicationContextConfiguration();
 		try {
 			instance.load(is);
 		} catch (IOException e) {

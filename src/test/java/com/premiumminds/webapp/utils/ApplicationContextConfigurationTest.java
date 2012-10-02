@@ -36,6 +36,7 @@ public class ApplicationContextConfigurationTest extends TestCase {
 			stream.close();
 
 			assertTrue("test2".equals(ApplicationContextConfiguration.get().getProperty("application")));
+			assertTrue("123".equals(ApplicationContextConfiguration.get().getProperty("application2")));
 
 			tester.stop();
 		} catch (Exception e) {

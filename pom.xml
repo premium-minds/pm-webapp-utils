@@ -31,7 +31,7 @@
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
 		<version>1.2.16</version>
-	    <scope>runtime</scope>
+	    <scope>provided</scope>
 	</dependency>
 	
 	<!-- MAILER -->
@@ -39,7 +39,7 @@
 	    <groupId>javax.mail</groupId>
 	    <artifactId>mail</artifactId>
 	    <version>1.4.4</version>
-	    <scope>runtime</scope>
+	    <scope>provided</scope>
 	</dependency>
 
 	<dependency>

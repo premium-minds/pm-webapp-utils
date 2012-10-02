@@ -1,5 +1,6 @@
 package com.premiumminds.webapp.utils;
 
+import java.io.InputStream;
 import java.net.URL;
 
 import org.eclipse.jetty.testing.ServletTester;
@@ -28,6 +29,14 @@ public class ApplicationContextConfigurationTest extends TestCase {
 			tester.start();
 			assertTrue(ApplicationContextConfiguration.get().containsKey("application"));
 			assertTrue("test".equals(ApplicationContextConfiguration.get().getProperty("application")));
+			
+	    	WebAppFileLoader loader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest2.properties");
+	    	InputStream stream = loader.load();
+	    	ApplicationContextConfiguration.configure(stream);
+			stream.close();
+
+			assertTrue("test2".equals(ApplicationContextConfiguration.get().getProperty("application")));
+
 			tester.stop();
 		} catch (Exception e) {
 			e.printStackTrace();

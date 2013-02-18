@@ -29,6 +29,7 @@ public class ContextMailerListener implements ServletContextListener {
 
 	    try {
 			Mailer.configure(fileLoader.load());
+			AbstractMailer.configure(fileLoader.load());
 		} catch (Exception e) {
 			log.fatal("couldn't load the Mailer properties on '"+url+"'");
 			log.error("error configuring mailer", e);

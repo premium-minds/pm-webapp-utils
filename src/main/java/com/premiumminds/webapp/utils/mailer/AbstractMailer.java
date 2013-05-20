@@ -30,7 +30,7 @@ public abstract class AbstractMailer {
 			public static final String USER = NAMESPACE + ".user";
 			public static final String PASSWORD = NAMESPACE + ".password";
 			public static final String AUTH = NAMESPACE + ".auth";
-			
+
 			/**needed for SendGrid*/
 			public static final String FROM = NAMESPACE + ".from";
 		}
@@ -86,7 +86,10 @@ public abstract class AbstractMailer {
 	public final static void configure(InputStream input) throws IOException{
 		Properties properties = new Properties();
 		properties.load(input);
+		configure(properties);
+	}
 
+	public final static void configure(Properties properties) throws IOException{
 		if(isValidBasicConfiguration(properties)) {
 			mailConfig = properties;
 		} else {

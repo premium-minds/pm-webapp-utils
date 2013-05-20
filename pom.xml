@@ -4,7 +4,7 @@
 
 	<groupId>com.premiumminds</groupId>
 	<artifactId>webapp-utils</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>webapp-utils</name>
@@ -75,5 +75,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+          <repository>
+               <id>premium-repository</id>
+               <name>premium-repository-releases</name>
+               <url>http://maven.premium-minds.local/libs-release-local</url>
+           </repository>
+     </distributionManagement>
 
 </project>

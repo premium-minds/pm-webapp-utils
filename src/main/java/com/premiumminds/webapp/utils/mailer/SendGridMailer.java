@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendGridMailer extends SimpleMailer {
@@ -47,6 +48,11 @@ public class SendGridMailer extends SimpleMailer {
 		Session session = Session.getDefaultInstance(getConfiguration());
 		try {
 			Transport tr = session.getTransport("smtp");
+			/** SendGrid From */
+			if(null!=getConfigurationProperty(Configuration.SMTP.FROM)){
+				message.setFrom(new InternetAddress(getConfigurationProperty(Configuration.SMTP.FROM)));
+			}
+			
 			if(getConfigurationProperty(Configuration.SMTP.AUTH, "true").equalsIgnoreCase("true")){
 				tr.connect(getConfigurationProperty(Configuration.SMTP.USER), getConfigurationProperty(Configuration.SMTP.PASSWORD));
 			} else {

@@ -30,6 +30,9 @@ public abstract class AbstractMailer {
 			public static final String USER = NAMESPACE + ".user";
 			public static final String PASSWORD = NAMESPACE + ".password";
 			public static final String AUTH = NAMESPACE + ".auth";
+			
+			/**needed for SendGrid*/
+			public static final String FROM = NAMESPACE + ".from";
 		}
 
 		public static class Debug {

@@ -14,6 +14,14 @@ public class SendGridMailer extends SimpleMailer {
 
 	public SendGridMailer(){}
 
+	public void send(String to, String subject, String body, String sendGridHeaders, MIMEMessageConfigurator config)
+			throws MailerException {
+		ArrayList<String> tos = new ArrayList<String>(1);
+		tos.add(to);
+		this.send(tos, null, null, null, subject, body, sendGridHeaders, config);
+		return;
+	}
+
 	public void send(String to, String subject, String body, String sendGridHeaders)
 			throws MailerException {
 		this.send(to, null, subject, body, sendGridHeaders);
@@ -36,7 +44,19 @@ public class SendGridMailer extends SimpleMailer {
 			Collection<String> bccs, Map<String, String> headers,
 			String subject, String body, String sendGridHeaders) throws MailerException {
 		MimeMessage message = buildMessage(to, ccs, bccs, headers, subject, body);
+		
 		this.send(message, sendGridHeaders);
+		return;
+	}
+
+	public void send(Collection<String> to, Collection<String> ccs,
+			Collection<String> bccs, Map<String, String> headers,
+			String subject, String body, String sendGridHeaders, MIMEMessageConfigurator config) throws MailerException {
+		MimeMessage message = buildMessage(to, ccs, bccs, headers, subject, body);
+		MimeMessage toSend = null == config ? message : config.configure(message);
+		
+		this.send(toSend, sendGridHeaders);
+		return;
 	}
 	
 	@Override

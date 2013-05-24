@@ -5,17 +5,27 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.mail.Address;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMessage.RecipientType;
 
 public class SimpleMailer extends AbstractMailer {
 
+	private Address from;
+	
 	public SimpleMailer(){}
 
+	public SimpleMailer(String from) {
+		try {
+			this.from = convertStringToAddress(from);
+		} catch (MailerException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	protected boolean isValidMailerConfiguration(Properties config) {
 		return true;
@@ -56,6 +66,15 @@ public class SimpleMailer extends AbstractMailer {
 	@Override
 	public void send(MimeMessage message) throws MailerException {
 		Session session = Session.getDefaultInstance(getConfiguration());
+		
+		if(this.from != null) {
+			try {
+				message.setFrom(from);
+			} catch (MessagingException e) {
+				throw new MailerException(e);
+			}
+		}
+		
 		try {
 			Transport tr = session.getTransport("smtp");
 			if(getConfigurationProperty(Configuration.SMTP.AUTH, "true").equalsIgnoreCase("true")){
@@ -81,21 +100,21 @@ public class SimpleMailer extends AbstractMailer {
 			if(isDebug()){
 
 				for(InternetAddress address : convertStringsToAddressess(getList(getDebugAddress()))){
-					message.addRecipient(RecipientType.TO, address);
+					message.addRecipient(javax.mail.Message.RecipientType.TO, address);
 				}
 
 			} else {
 				for(String address : to){
-					message.addRecipient(RecipientType.TO, convertStringToAddress(address));
+					message.addRecipient(javax.mail.Message.RecipientType.TO, convertStringToAddress(address));
 				}
 				if(ccs!=null){
 					for(String address : ccs){
-						message.addRecipient(RecipientType.CC, convertStringToAddress(address));
+						message.addRecipient(javax.mail.Message.RecipientType.CC, convertStringToAddress(address));
 					}
 				}
 				if(bccs!=null){
 					for(String address : bccs){
-						message.addRecipient(RecipientType.BCC, convertStringToAddress(address));
+						message.addRecipient(javax.mail.Message.RecipientType.BCC, convertStringToAddress(address));
 					}
 				}
 			}

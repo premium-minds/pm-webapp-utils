@@ -4,7 +4,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Class to load the Application configurations at the servlet context
@@ -14,7 +16,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class ApplicationContextConfigurationListener implements ServletContextListener {
-	private static final Logger log = Logger.getLogger(ApplicationContextConfigurationListener.class);
+	private static final Logger log = LoggerFactory.getLogger(ApplicationContextConfigurationListener.class);
 
 	public void contextInitialized(ServletContextEvent sce) {
 	    ServletContext context = sce.getServletContext( );
@@ -26,7 +28,7 @@ public class ApplicationContextConfigurationListener implements ServletContextLi
 	    try {
 			ApplicationContextConfiguration.configure(fileLoader.load());
 		} catch (Exception e) {
-			log.fatal("couldn't load the properties file '"+url+"'");
+			log.error("couldn't load the properties file '"+url+"'");
 			log.error("error loading application properties", e);
 		}
 	}

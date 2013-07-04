@@ -14,7 +14,8 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractMailer {
 
@@ -47,7 +48,7 @@ public abstract class AbstractMailer {
 					+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 
 
-	private static final Logger log = Logger.getLogger(AbstractMailer.class);
+	private static final Logger log = LoggerFactory.getLogger(AbstractMailer.class);
 	private static Properties mailConfig;
 
 	/**

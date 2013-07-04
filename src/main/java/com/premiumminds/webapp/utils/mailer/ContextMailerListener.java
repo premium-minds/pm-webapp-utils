@@ -4,7 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.premiumminds.webapp.utils.WebAppFileLoader;
 
@@ -18,7 +19,7 @@ import com.premiumminds.webapp.utils.WebAppFileLoader;
  *
  */
 public class ContextMailerListener implements ServletContextListener {
-	private static final Logger log = Logger.getLogger(ContextMailerListener.class);
+	private static final Logger log = LoggerFactory.getLogger(ContextMailerListener.class);
 
 	public void contextInitialized(ServletContextEvent sce) {
 	    ServletContext context = sce.getServletContext( );
@@ -31,8 +32,7 @@ public class ContextMailerListener implements ServletContextListener {
 			Mailer.configure(fileLoader.load());
 			AbstractMailer.configure(fileLoader.load());
 		} catch (Exception e) {
-			log.fatal("couldn't load the Mailer properties on '"+url+"'");
-			log.error("error configuring mailer", e);
+			log.error("couldn't load the Mailer properties on '"+url+"'", e);
 		}
 	}
 

@@ -119,7 +119,7 @@ public class SimpleMailer extends AbstractMailer {
 				}
 			}
 			message.setSubject(subject);
-			message.setContent(body, "text/plain");
+			message.setContent(body, "text/plain; charset=\"utf-8\"");
 
 			if(headers != null) {
 				for(String key : headers.keySet()) {

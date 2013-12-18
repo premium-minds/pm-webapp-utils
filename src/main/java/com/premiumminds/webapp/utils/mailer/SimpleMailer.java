@@ -4,17 +4,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Properties;
-
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.Address;
+import javax.mail.BodyPart;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 public class SimpleMailer extends AbstractMailer {
 
 	private Address from;
+	private String[] filenames;
 	
 	public SimpleMailer(){}
 
@@ -119,15 +126,37 @@ public class SimpleMailer extends AbstractMailer {
 				}
 			}
 			message.setSubject(subject);
-			message.setContent(body, "text/plain; charset=\"utf-8\"");
-
+			
+			Multipart mp = new MimeMultipart();
+			
+			BodyPart messageBodyText = new MimeBodyPart();  
+			messageBodyText.setContent(body, "text/plain; charset=\"utf-8\"");  
+			
+			mp.addBodyPart(messageBodyText);
+			
+			if(null != getAttachmentsFiles()){
+				  
+				for (String filename : getAttachmentsFiles()) {
+					 DataSource source = new FileDataSource(filename);
+					
+					BodyPart messageAttachment = new MimeBodyPart();
+					 
+					 messageAttachment.setDataHandler(new DataHandler(source));
+					 messageAttachment.setFileName(filename);
+					
+					 mp.addBodyPart(messageAttachment);
+				}
+			}
+			
+			message.setContent(mp);
+					
 			if(headers != null) {
 				for(String key : headers.keySet()) {
 					message.addHeader(key, headers.get(key));
 					message.setHeader(key, headers.get(key));
 				}
 			}
-
+			
 			message.saveChanges();
 		} catch (MailerException e) {
 			throw new MailerException(e);
@@ -136,6 +165,14 @@ public class SimpleMailer extends AbstractMailer {
 		}
 
 		return message;
+	}
+	
+	private String[]  getAttachmentsFiles() {
+		return this.filenames ;
+	}
+
+	public void attachFile(String[] files) {
+		this.filenames = files;
 	}
 
 }

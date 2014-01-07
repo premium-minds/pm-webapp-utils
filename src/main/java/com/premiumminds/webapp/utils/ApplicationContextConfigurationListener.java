@@ -23,6 +23,7 @@ public class ApplicationContextConfigurationListener implements ServletContextLi
 
 	    String url = context.getInitParameter("app-config");
 	    
+		if(url==null) throw new RuntimeException("couldn't get webapp parameter 'app-config'");
 	    WebAppFileLoader fileLoader = new WebAppFileLoader(url, sce.getServletContext( ));
 	    
 	    try {

@@ -24,6 +24,7 @@ public class ContextLogbackListener implements ServletContextListener {
 
 		String url = context.getInitParameter("logger-config");
 
+		if(url==null) throw new RuntimeException("couldn't get webapp parameter 'logger-config'");
 		WebAppFileLoader fileLoader = new WebAppFileLoader(url,
 				sce.getServletContext());
 

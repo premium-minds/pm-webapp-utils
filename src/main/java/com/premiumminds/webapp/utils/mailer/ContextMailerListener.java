@@ -26,6 +26,7 @@ public class ContextMailerListener implements ServletContextListener {
 
 	    String url = context.getInitParameter("mailer-config");
 	    
+		if(url==null) throw new RuntimeException("couldn't get webapp parameter 'mailer-config'");
 	    WebAppFileLoader fileLoader = new WebAppFileLoader(url, sce.getServletContext( ));
 
 	    try {

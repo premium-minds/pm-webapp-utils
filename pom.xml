@@ -3,7 +3,7 @@
 
 	<groupId>com.premiumminds</groupId>
 	<artifactId>pm-webapp-utils</artifactId>
-	<version>1.3-SNAPSHOT</version>
+	<version>1.3</version>
 	<packaging>jar</packaging>
 
 	<name>pm-webapp-utils</name>
@@ -28,7 +28,7 @@
 		<url>https://github.com/premium-minds/pm-webapp-utils</url>
 		<connection>scm:git:git@github.com:premium-minds/pm-webapp-utils.git</connection>
 		<developerConnection>scm:git:git@github.com:premium-minds/pm-webapp-utils.git</developerConnection>
-	        <tag>HEAD</tag>
+	        <tag>v1.3</tag>
         </scm>
 
 	<developers>

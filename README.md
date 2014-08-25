@@ -3,8 +3,6 @@ pm-webapp-utils
 
 A library with utils for Java servlet containers
 
-A library with utils for JPA persistence applications, and some Hibernate stuff
-
 ## Maven projects
 Add the following maven dependency to your project `pom.xml`:
 

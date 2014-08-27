@@ -39,6 +39,7 @@ import com.premiumminds.webapp.utils.WebAppFileLoader;
 public class ContextMailerListener implements ServletContextListener {
 	private static final Logger log = LoggerFactory.getLogger(ContextMailerListener.class);
 
+	@SuppressWarnings("deprecation")
 	public void contextInitialized(ServletContextEvent sce) {
 	    ServletContext context = sce.getServletContext( );
 

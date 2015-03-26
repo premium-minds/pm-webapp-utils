@@ -74,7 +74,7 @@ public class SimpleMailer extends AbstractMailer {
 	public void send(Collection<String> to, Collection<String> ccs,
 			Collection<String> bccs, String subject, String body)
 					throws MailerException {
-		this.send(to, ccs, null, null, subject, body);
+		this.send(to, ccs, bccs, null, subject, body);
 	}
 
 	@Override

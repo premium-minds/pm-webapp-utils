@@ -71,7 +71,7 @@ public class WebAppFileLoader {
 	 * 
 	 * @return - InputStream with the file contents
 	 * @throws URISyntaxException - if the URI is not valid
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException - if was not found
 	 */
 	public InputStream load() throws URISyntaxException, FileNotFoundException{
 		URI uri = new URI(filename);

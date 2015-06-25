@@ -18,13 +18,12 @@
  */
 package com.premiumminds.webapp.utils;
 
-import java.util.Properties;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.core.config.ConfigurationSource;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /**
  * Class to load Log4j configurations at the servlet context
@@ -42,10 +41,8 @@ public class ContextLog4jListener implements ServletContextListener {
 	    
 	    WebAppFileLoader fileLoader = new WebAppFileLoader(url, sce.getServletContext( ));
 
-	    Properties properties = new Properties();
 	    try {
-			properties.load(fileLoader.load());
-		    PropertyConfigurator.configure(properties);
+			Configurator.initialize(null, new ConfigurationSource(fileLoader.load()));
 		} catch (Exception e) {
 			System.err.println("Couldn't load the log4j properties file on '"+url+"'");
 			e.printStackTrace();

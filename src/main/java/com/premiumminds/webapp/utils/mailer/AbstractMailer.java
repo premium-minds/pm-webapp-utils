@@ -71,6 +71,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Gets the configuration property for the given key
+	 * 
 	 * @param key The configuration property key
 	 * @return The configuration property value
 	 */
@@ -80,6 +81,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Gets the configuration property for the given key
+	 * 
 	 * @param key The configuration property key
 	 * @param defaultValue The default value to be returned if the actual value is null
 	 * @return The configuration property value
@@ -91,6 +93,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Gets the Properties object with the mailer configurations.
+	 * 
 	 * @return The mailer properties.
 	 */
 	protected static Properties getConfiguration() {
@@ -99,8 +102,9 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Loads mailer properties from a given configuration file input stream
+	 * 
 	 * @param input The properties file input stream
-	 * @throws IOException
+	 * @throws IOException some error occurs reading from input
 	 */
 	public final static void configure(InputStream input) throws IOException{
 		Properties properties = new Properties();
@@ -118,7 +122,8 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Returns whether or not the mailer is in debug mode
-	 * @return
+	 * 
+	 * @return true if is in debug mode
 	 */
 	public final boolean isDebug() {
 		String debug = getConfigurationProperty(Configuration.Debug.NAMESPACE);
@@ -128,6 +133,7 @@ public abstract class AbstractMailer {
 	/**
 	 * Returns the debug mode email address.
 	 * All emails will be sent to this address when in debug mode.
+	 * 
 	 * @return A string with the debug email address
 	 */
 	public final String getDebugAddress() {
@@ -137,9 +143,10 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Converts a given string representation of an email address to an internet address
+	 * 
 	 * @param mail The string email address
 	 * @return The internet address for the email address given in the input
-	 * @throws MailerException
+	 * @throws MailerException address is not valid
 	 */
 	protected static InternetAddress convertStringToAddress(String mail) throws MailerException {
 		try {
@@ -151,9 +158,10 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Converts a list of strings to a list of corresponding internet addresses
+	 * 
 	 * @param mails The list of string addresses
 	 * @return A list of internet addresses
-	 * @throws MailerException
+	 * @throws MailerException some address is not valid
 	 */
 	protected static Collection<InternetAddress> convertStringsToAddressess(Collection<String> mails) throws MailerException{
 		List<InternetAddress> to = new ArrayList<InternetAddress>();
@@ -167,6 +175,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Helper function to get a list from a configuration property value
+	 * 
 	 * @param value the property value
 	 * @return a list of String property values
 	 */
@@ -184,6 +193,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Checks if the mailer configurations are all correct
+	 * 
 	 * @param config The configuration properties
 	 * @return true if OK
 	 */
@@ -194,6 +204,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Checks if any essential configurations are incorrect
+	 * 
 	 * @param config The configuration properties
 	 * @return true if OK
 	 */
@@ -218,6 +229,7 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Checks if any implementation specific mailer configurations are incorrect
+	 * 
 	 * @param config the configuration properties
 	 * @return true if OK
 	 */
@@ -225,7 +237,9 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Sends an email
+	 * 
 	 * @param message The Mime message object to be sent
+	 * @throws MailerException some problem with the arguments
 	 */
 	public abstract void send(MimeMessage message) throws MailerException;
 
@@ -234,20 +248,22 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Sends an email
+	 * 
 	 * @param to The destination email
 	 * @param subject the message subject
 	 * @param body The message body
-	 * @throws MailerException
+	 * @throws MailerException some problem with the arguments
 	 */
 	public abstract void send(String to, String subject, String body) throws MailerException;
 
 	/**
 	 * Sends an email
+	 * 
 	 * @param to The destination email
 	 * @param headers A map with any header values to be added or overridden
 	 * @param subject the message subject
 	 * @param body The message body
-	 * @throws MailerException
+	 * @throws MailerException some problem with the arguments
 	 */
 	public abstract void send(String to, Map<String, String> headers, String subject, String body) throws MailerException;
 
@@ -256,24 +272,26 @@ public abstract class AbstractMailer {
 
 	/**
 	 * Sends an email
+	 * 
 	 * @param to The destination email
 	 * @param ccs Carbon copy addresses
 	 * @param bccs Carbon copy addresses
 	 * @param subject the message subject
 	 * @param body The message body
-	 * @throws MailerException
+	 * @throws MailerException some problem with the arguments
 	 */
 	public abstract void send(Collection<String> to, Collection<String> ccs, Collection<String> bccs, String subject, String body) throws MailerException;
 
 	/**
 	 * Sends an email
+	 * 
 	 * @param to The destination email
 	 * @param ccs Carbon copy addresses
 	 * @param bccs Carbon copy addresses
 	 * @param headers A map with any header values to be added or overridden
 	 * @param subject the message subject
 	 * @param body The message body
-	 * @throws MailerException
+	 * @throws MailerException some problem with the arguments
 	 */
 	public abstract void send(Collection<String> to, Collection<String> ccs, Collection<String> bccs, Map<String, String> headers, String subject, String body) throws MailerException;
 

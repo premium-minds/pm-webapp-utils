@@ -40,6 +40,7 @@ public class SimpleMailer extends AbstractMailer {
 
 	private Address from;
 	private String[] filenames;
+	private String bodyPartType = "text/plain; charset=\"utf-8\"";
 	
 	public SimpleMailer(){}
 
@@ -114,22 +115,20 @@ public class SimpleMailer extends AbstractMailer {
 		}
 	}
 
-	protected MimeMessage buildMessage(Collection<String> to, Collection<String> ccs,
+	protected MimeMessage buildMessage(Collection<String> tos, Collection<String> ccs,
 			Collection<String> bccs, Map<String, String> headers,
 			String subject, String body) throws MailerException {
 
 		Session session = Session.getDefaultInstance(getConfiguration());
 		MimeMessage message = new MimeMessage(session);
 
-		try {		
-			if(isDebug()){
-
-				for(InternetAddress address : convertStringsToAddressess(getList(getDebugAddress()))){
+		try {
+			if (isDebug()) {
+				for (InternetAddress address : convertStringsToAddressess(getList(getDebugAddress()))) {
 					message.addRecipient(javax.mail.Message.RecipientType.TO, address);
 				}
-
 			} else {
-				for(String address : to){
+				for(String address : tos){
 					message.addRecipient(javax.mail.Message.RecipientType.TO, convertStringToAddress(address));
 				}
 				if(ccs!=null){
@@ -148,33 +147,33 @@ public class SimpleMailer extends AbstractMailer {
 			Multipart mp = new MimeMultipart();
 			
 			BodyPart messageBodyText = new MimeBodyPart();  
-			messageBodyText.setContent(body, "text/plain; charset=\"utf-8\"");  
+			messageBodyText.setContent(body, getBodyPartType());  
 			
 			mp.addBodyPart(messageBodyText);
 			
-			if(null != getAttachmentsFiles()){
-				  
+			if (null != getAttachmentsFiles()) {
+
 				for (String filename : getAttachmentsFiles()) {
-					 DataSource source = new FileDataSource(filename);
-					
+					DataSource source = new FileDataSource(filename);
+
 					BodyPart messageAttachment = new MimeBodyPart();
-					 
-					 messageAttachment.setDataHandler(new DataHandler(source));
-					 messageAttachment.setFileName(filename);
-					
-					 mp.addBodyPart(messageAttachment);
+
+					messageAttachment.setDataHandler(new DataHandler(source));
+					messageAttachment.setFileName(filename);
+
+					mp.addBodyPart(messageAttachment);
 				}
 			}
 			
 			message.setContent(mp);
-					
-			if(headers != null) {
-				for(String key : headers.keySet()) {
+
+			if (headers != null) {
+				for (String key : headers.keySet()) {
 					message.addHeader(key, headers.get(key));
 					message.setHeader(key, headers.get(key));
 				}
 			}
-			
+
 			message.saveChanges();
 		} catch (MailerException e) {
 			throw new MailerException(e);
@@ -185,12 +184,20 @@ public class SimpleMailer extends AbstractMailer {
 		return message;
 	}
 	
-	private String[]  getAttachmentsFiles() {
-		return this.filenames ;
+	protected String[] getAttachmentsFiles() {
+		return this.filenames;
 	}
 
 	public void attachFile(String[] files) {
 		this.filenames = files;
 	}
 
+	public String getBodyPartType() {
+		return this.bodyPartType;
+	}
+
+	public void setBodyPartType(String bodyPartType) {
+		this.bodyPartType = bodyPartType;
+	}
+	
 }

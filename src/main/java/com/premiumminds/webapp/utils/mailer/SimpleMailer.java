@@ -41,7 +41,12 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SimpleMailer extends AbstractMailer {
+	
+	private static final Logger log = LoggerFactory.getLogger(SimpleMailer.class);
 
 	private Address from;
 	private String[] filenames;
@@ -172,7 +177,7 @@ public class SimpleMailer extends AbstractMailer {
 					try {
 						contentType = Files.probeContentType(file.toPath());
 					} catch (IOException e) {
-						// ignore exception while determining file type
+						log.info("Failed to determine content type of attachment ["+filename+"]: ", e);
 					}
 					messageAttachment.addHeader("Content-Type", contentType);
 

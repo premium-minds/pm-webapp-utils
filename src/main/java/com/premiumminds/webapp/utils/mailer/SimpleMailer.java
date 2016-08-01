@@ -18,10 +18,14 @@
  */
 package com.premiumminds.webapp.utils.mailer;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Properties;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -29,6 +33,7 @@ import javax.mail.Address;
 import javax.mail.BodyPart;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
+import javax.mail.Part;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -36,7 +41,12 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SimpleMailer extends AbstractMailer {
+	
+	private static final Logger log = LoggerFactory.getLogger(SimpleMailer.class);
 
 	private Address from;
 	private String[] filenames;
@@ -154,12 +164,22 @@ public class SimpleMailer extends AbstractMailer {
 			if (null != getAttachmentsFiles()) {
 
 				for (String filename : getAttachmentsFiles()) {
-					DataSource source = new FileDataSource(filename);
-
+					File file = new File(filename);
+					DataSource source = new FileDataSource(file);
+					
 					BodyPart messageAttachment = new MimeBodyPart();
-
 					messageAttachment.setDataHandler(new DataHandler(source));
-					messageAttachment.setFileName(filename);
+					
+					messageAttachment.setFileName(file.getName());
+					messageAttachment.setDisposition(Part.ATTACHMENT);
+
+					String contentType = source.getContentType();
+					try {
+						contentType = Files.probeContentType(file.toPath());
+					} catch (IOException e) {
+						log.info("Failed to determine content type of attachment ["+filename+"]: ", e);
+					}
+					messageAttachment.addHeader("Content-Type", contentType);
 
 					mp.addBodyPart(messageAttachment);
 				}

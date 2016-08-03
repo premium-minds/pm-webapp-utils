@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
@@ -61,6 +62,8 @@ public class SimpleMailer extends AbstractMailer {
 			e.printStackTrace();
 		}
 	}
+	
+	Map<String,String> fileContentTypes = new HashMap<String,String>();
 	
 	@Override
 	protected boolean isValidMailerConfiguration(Properties config) {
@@ -166,19 +169,14 @@ public class SimpleMailer extends AbstractMailer {
 				for (String filename : getAttachmentsFiles()) {
 					File file = new File(filename);
 					DataSource source = new FileDataSource(file);
-					
+
 					BodyPart messageAttachment = new MimeBodyPart();
 					messageAttachment.setDataHandler(new DataHandler(source));
 					
 					messageAttachment.setFileName(file.getName());
 					messageAttachment.setDisposition(Part.ATTACHMENT);
 
-					String contentType = source.getContentType();
-					try {
-						contentType = Files.probeContentType(file.toPath());
-					} catch (IOException e) {
-						log.info("Failed to determine content type of attachment ["+filename+"]: ", e);
-					}
+					String contentType = getAttachmentContentType(source.getContentType(), filename);
 					messageAttachment.addHeader("Content-Type", contentType);
 
 					mp.addBodyPart(messageAttachment);
@@ -218,6 +216,23 @@ public class SimpleMailer extends AbstractMailer {
 
 	public void setBodyPartType(String bodyPartType) {
 		this.bodyPartType = bodyPartType;
+	}
+	
+	public String getAttachmentContentType(String defaultType, String filename) {
+		if (filename!=null && fileContentTypes.containsKey(filename)) return fileContentTypes.get(filename);
+		
+		File file = new File(filename);
+		String contentType = defaultType;
+		try {
+			contentType = Files.probeContentType(file.toPath());
+		} catch (IOException e) {
+			log.info("Failed to determine content type of attachment ["+filename+"]: ", e);
+		}
+		return contentType;
+	}
+	
+	public void setAttachmentContentType(String filename, String contentType) {
+		fileContentTypes.put(filename, contentType);
 	}
 	
 }

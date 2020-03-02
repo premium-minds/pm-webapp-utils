@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+ - [Bump log4j-core from 2.13.0 to 2.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/22)
+
 ## [2.0]
 
 ### Changed 

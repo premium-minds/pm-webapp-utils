@@ -4,7 +4,7 @@
 
 ### Changed
 
- - [Bump log4j-core from 2.13.0 to 2.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/22)
+ - [Bump log4j-core from 2.13.0 to 2.13.2](https://github.com/premium-minds/pm-webapp-utils/pull/24)
  - [Bump maven-javadoc-plugin from 3.1.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/23)
 
 ## [2.0]

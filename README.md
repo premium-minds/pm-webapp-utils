@@ -22,7 +22,7 @@ Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search
 
 ## Continuous Integration
 
-[![Build Status](https://travis-ci.org/premium-minds/pm-webapp-utils.png?branch=master)](https://travis-ci.org/premium-minds/pm-webapp-utils)
+[![Build Status](https://travis-ci.com/premium-minds/pm-webapp-utils.png?branch=master)](https://travis-ci.com/premium-minds/pm-webapp-utils)
 
 CI is hosted by [travis-ci.org](https://travis-ci.org/)
 

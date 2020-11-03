@@ -18,21 +18,18 @@
  */
 package com.premiumminds.webapp.utils;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.eclipse.jetty.testing.ServletTester;
+import org.junit.jupiter.api.Test;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+public class WebAppFileLoaderTest {
 
-public class WebAppFileLoaderTest extends TestCase {
-	public static Test suite(){
-		return new TestSuite(WebAppFileLoaderTest.class);
-	}
-	
+	@Test
 	public void testFilenotfound(){
 		String[] filenames = 
 			{
@@ -56,13 +53,12 @@ public class WebAppFileLoaderTest extends TestCase {
 			fileLoader.load();
 			fail("should throw RuntimeException because there is no context");
 		} catch(RuntimeException e){
-		} catch (FileNotFoundException e) {
-			fail("should throw RuntimeException because there is no context");
-		} catch (URISyntaxException e) {
+		} catch (FileNotFoundException | URISyntaxException e) {
 			fail("should throw RuntimeException because there is no context");
 		}
 	}
-	
+
+	@Test
 	public void testSuccess(){
 		WebAppFileLoader fileLoader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/WebAppFileLoaderTestFile.txt");
 		loadSuccess(fileLoader);
@@ -81,7 +77,8 @@ public class WebAppFileLoaderTest extends TestCase {
 			fail(e.getMessage());
 		}
 	}
-	
+
+	@Test
 	public void testWithServletContext(){
 		ServletTester tester = new ServletTester();
 		

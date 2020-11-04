@@ -48,15 +48,15 @@ public class ApplicationContextConfigurationTest {
 		try {
 			tester.start();
 			assertTrue(ApplicationContextConfiguration.get().containsKey("application"));
-			assertEquals(ApplicationContextConfiguration.get().getProperty("application"), "test");
+			assertEquals("test", ApplicationContextConfiguration.get().getProperty("application"));
 			
 	    	WebAppFileLoader loader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest2.properties");
 	    	InputStream stream = loader.load();
 	    	ApplicationContextConfiguration.configure(stream);
 			stream.close();
 
-			assertEquals(ApplicationContextConfiguration.get().getProperty("application"), "test2");
-			assertEquals(ApplicationContextConfiguration.get().getProperty("application2"), "123");
+			assertEquals("test2", ApplicationContextConfiguration.get().getProperty("application"));
+			assertEquals("123", ApplicationContextConfiguration.get().getProperty("application2"));
 
 			tester.stop();
 		} catch (Exception e) {

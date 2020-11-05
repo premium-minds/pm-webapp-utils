@@ -8,6 +8,7 @@
  - [Bump maven-javadoc-plugin from 3.1.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/23)
  - [Bump log4j-core from 2.13.2 to 2.13.3](https://github.com/premium-minds/pm-webapp-utils/pull/25)
  - [[Security] Bump junit from 4.13 to 4.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/26)
+ - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
 
 ## [2.0]
 

@@ -47,7 +47,20 @@
 
  - [send emails from SimpleMailer as text (default) or html](https://github.com/premium-minds/pm-webapp-utils/pull/4)
  
+## [1.4]
 
+### Fixed
+
+ - [bcc missing in one constructor of simplerMailer](https://github.com/premium-minds/pm-webapp-utils/pull/3)
+ - [bump to dependencies versions](https://github.com/premium-minds/pm-webapp-utils/commit/69d6b7a0c3f5cd53269fd6d12b5c4c59738df4d4)
+   - javax.servlet:servlet-api:2.5 → javax.servlet:javax.servlet-api:3.1.0
+   - log4j:log4j:1.2.16 → org.apache.logging.log4j:log4j-core:2.3
+   - ch.qos.logback:logback-classic:1.0.13 → ch.qos.logback:logback-classic:1.1.3
+   - javax.mail:mail:1.4.4 → javax.mail:javax.mail-api:1.5.4 
+   - junit:junit:3.8.1 → junit:junit:4.12
+   - org.eclipse.jetty:test-jetty-servlet:7.6.1.v20120215 → org.eclipse.jetty:test-jetty-servlet:8.1.17.v20150415
+   
+ 
 [unreleased]: https://github.com/premium-minds/pm-webapp-utils/compare/v2.0...HEAD
 [2.0]: https://github.com/premium-minds/pm-webapp-utils/compare/v1.5...v2.0
 [1.5]: https://github.com/premium-minds/pm-webapp-utils/compare/v1.4...v1.5

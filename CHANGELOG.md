@@ -34,7 +34,7 @@
  - [send emails from SimpleMailer as text (default) or html](https://github.com/premium-minds/pm-webapp-utils/pull/4)
  
 
-[unreleased]: https://github.com/premium-minds/pm-wicket-utils/compare/v2.0...HEAD
+[unreleased]: https://github.com/premium-minds/pm-webapp-utils/compare/v2.0...HEAD
 [2.0]: https://github.com/premium-minds/pm-webapp-utils/compare/v1.5...v2.0
 [1.5]: https://github.com/premium-minds/pm-webapp-utils/compare/v1.4...v1.5
 [1.4]: https://github.com/premium-minds/pm-webapp-utils/compare/v1.3...v1.4

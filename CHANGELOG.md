@@ -4,6 +4,20 @@
 
 ### Changed
 
+ - [removed unused dependency com.google.code.gson](https://github.com/premium-minds/pm-webapp-utils/commit/29105e8e793aa74024b55e36065c6190c7e8851a)
+ - [Bump maven-scm-publish-plugin from 1.0-beta-2 to 3.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/12)
+ - [Bump maven-javadoc-plugin from 2.9.1 to 3.1.1](https://github.com/premium-minds/pm-webapp-utils/pull/11)
+ - [Bump maven-scm-provider-gitexe from 1.8.1 to 1.11.2](https://github.com/premium-minds/pm-webapp-utils/pull/9)
+ - [Bump maven-compiler-plugin from 2.3.2 to 3.8.1](https://github.com/premium-minds/pm-webapp-utils/pull/8)
+ - [Bump javax.servlet-api from 4.0.0 to 4.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/14)
+ - [Bump maven-gpg-plugin from 1.5 to 1.6 ](https://github.com/premium-minds/pm-webapp-utils/pull/16)
+ - [Bump maven-release-plugin from 2.4.2 to 2.5.3](https://github.com/premium-minds/pm-webapp-utils/pull/15)
+ - [Bump nexus-staging-maven-plugin from 1.6.2 to 1.6.8](https://github.com/premium-minds/pm-webapp-utils/pull/17)
+ - [Bump log4j-core from 2.11.1 to 2.12.1](https://github.com/premium-minds/pm-webapp-utils/pull/13)
+ - [Bump maven-source-plugin from 2.2.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/18)
+ - [Bump log4j-core from 2.12.1 to 2.13.0](https://github.com/premium-minds/pm-webapp-utils/pull/19)
+ - [Bump junit from 4.12 to 4.13](https://github.com/premium-minds/pm-webapp-utils/pull/21)
+ - [Bump maven-source-plugin from 3.2.0 to 3.2.1](https://github.com/premium-minds/pm-webapp-utils/pull/20)
  - [Bump log4j-core from 2.13.0 to 2.13.2](https://github.com/premium-minds/pm-webapp-utils/pull/24)
  - [Bump maven-javadoc-plugin from 3.1.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/23)
  - [Bump log4j-core from 2.13.2 to 2.13.3](https://github.com/premium-minds/pm-webapp-utils/pull/25)

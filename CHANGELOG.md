@@ -23,6 +23,7 @@
  - [Bump log4j-core from 2.13.2 to 2.13.3](https://github.com/premium-minds/pm-webapp-utils/pull/25)
  - [[Security] Bump junit from 4.13 to 4.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/26)
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
+ - [Bump maven-scm-publish-plugin from 3.0.0 to 3.1.0](https://github.com/premium-minds/pm-webapp-utils/pull/28)
 
 ## [2.0]
 

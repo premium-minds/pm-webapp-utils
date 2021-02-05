@@ -24,6 +24,7 @@
  - [[Security] Bump junit from 4.13 to 4.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/26)
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
  - [Bump maven-scm-publish-plugin from 3.0.0 to 3.1.0](https://github.com/premium-minds/pm-webapp-utils/pull/28)
+ - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)
 
 ## [2.0]
 

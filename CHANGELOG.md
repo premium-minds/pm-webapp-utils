@@ -25,6 +25,8 @@
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
  - [Bump maven-scm-publish-plugin from 3.0.0 to 3.1.0](https://github.com/premium-minds/pm-webapp-utils/pull/28)
  - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)
+ - [Move old javax.mail-api to new jakarta.mail-api](https://github.com/premium-minds/pm-webapp-utils/pull/31)
+ - [Move from old javax.servlet-api to new jakarta.servlet-api](https://github.com/premium-minds/pm-webapp-utils/pull/32)
 
 ## [2.0]
 

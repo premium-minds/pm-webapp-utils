@@ -27,6 +27,7 @@
  - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)
  - [Move old javax.mail-api to new jakarta.mail-api](https://github.com/premium-minds/pm-webapp-utils/pull/31)
  - [Move from old javax.servlet-api to new jakarta.servlet-api](https://github.com/premium-minds/pm-webapp-utils/pull/32)
+ - [Bump log4j-core from 2.13.3 to 2.14.1](https://github.com/premium-minds/pm-webapp-utils/pull/36)
 
 ## [2.0]
 

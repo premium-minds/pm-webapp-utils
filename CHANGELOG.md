@@ -29,6 +29,7 @@
  - [Move from old javax.servlet-api to new jakarta.servlet-api](https://github.com/premium-minds/pm-webapp-utils/pull/32)
  - [Bump log4j-core from 2.13.3 to 2.14.1](https://github.com/premium-minds/pm-webapp-utils/pull/36)
  - [Bump jakarta.mail-api from 1.6.5 to 1.6.7](https://github.com/premium-minds/pm-webapp-utils/pull/38)
+ - [Bump maven-gpg-plugin from 1.6 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/39)
 
 ## [2.0]
 

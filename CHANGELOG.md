@@ -31,6 +31,7 @@
  - [Bump jakarta.mail-api from 1.6.5 to 1.6.7](https://github.com/premium-minds/pm-webapp-utils/pull/38)
  - [Bump maven-gpg-plugin from 1.6 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/39)
  - [Bump junit-jupiter-engine from 5.7.1 to 5.7.2](https://github.com/premium-minds/pm-webapp-utils/pull/40)
+ - [Bump maven-javadoc-plugin from 3.2.0 to 3.3.0](https://github.com/premium-minds/pm-webapp-utils/pull/41)
 
 ## [2.0]
 

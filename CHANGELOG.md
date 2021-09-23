@@ -37,6 +37,7 @@
  - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)
  - [Bump junit-jupiter-engine from 5.7.1 to 5.7.2](https://github.com/premium-minds/pm-webapp-utils/pull/40)
  - [Bump junit-jupiter-engine from 5.7.2 to 5.8.0](https://github.com/premium-minds/pm-webapp-utils/pull/49)
+ - [Bump junit-jupiter-engine from 5.8.0 to 5.8.1](https://github.com/premium-minds/pm-webapp-utils/pull/51)
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
 
 ### Removed

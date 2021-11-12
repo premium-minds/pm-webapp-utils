@@ -16,6 +16,7 @@
  - [Bump log4j-core from 2.13.3 to 2.14.1](https://github.com/premium-minds/pm-webapp-utils/pull/36)
  - [Bump logback-classic from 1.2.3 to 1.2.5](https://github.com/premium-minds/pm-webapp-utils/pull/45)
  - [Bump logback-classic from 1.2.5 to 1.2.6](https://github.com/premium-minds/pm-webapp-utils/pull/48)
+ - [Bump logback-classic from 1.2.6 to 1.2.7](https://github.com/premium-minds/pm-webapp-utils/pull/52)
  - [Bump maven-compiler-plugin from 2.3.2 to 3.8.1](https://github.com/premium-minds/pm-webapp-utils/pull/8)
  - [Bump maven-gpg-plugin from 1.5 to 1.6 ](https://github.com/premium-minds/pm-webapp-utils/pull/16)
  - [Bump maven-gpg-plugin from 1.6 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/39)

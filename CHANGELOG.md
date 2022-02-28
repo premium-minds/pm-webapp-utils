@@ -18,6 +18,7 @@
  - [Bump log4j-core from 2.15.0 to 2.16.0](https://github.com/premium-minds/pm-webapp-utils/pull/55)
  - [Bump log4j-core from 2.16.0 to 2.17.0](https://github.com/premium-minds/pm-webapp-utils/pull/58)
  - [Bump log4j-core from 2.17.0 to 2.17.1](https://github.com/premium-minds/pm-webapp-utils/pull/60)
+ - [Bump log4j-core from 2.17.1 to 2.17.2](https://github.com/premium-minds/pm-webapp-utils/pull/69)
  - [Bump logback-classic from 1.2.3 to 1.2.5](https://github.com/premium-minds/pm-webapp-utils/pull/45)
  - [Bump logback-classic from 1.2.5 to 1.2.6](https://github.com/premium-minds/pm-webapp-utils/pull/48)
  - [Bump logback-classic from 1.2.6 to 1.2.7](https://github.com/premium-minds/pm-webapp-utils/pull/52)

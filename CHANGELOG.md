@@ -24,6 +24,7 @@
  - [Bump logback-classic from 1.2.6 to 1.2.7](https://github.com/premium-minds/pm-webapp-utils/pull/52)
  - [Bump logback-classic from 1.2.7 to 1.2.9](https://github.com/premium-minds/pm-webapp-utils/pull/57)
  - [Bump logback-classic from 1.2.9 to 1.2.10](https://github.com/premium-minds/pm-webapp-utils/pull/59)
+ - [Bump logback-classic from 1.2.10 to 1.2.11](https://github.com/premium-minds/pm-webapp-utils/pull/70)
  - [Bump maven-compiler-plugin from 2.3.2 to 3.8.1](https://github.com/premium-minds/pm-webapp-utils/pull/8)
  - [Bump maven-compiler-plugin from 3.8.1 to 3.9.0](https://github.com/premium-minds/pm-webapp-utils/pull/62)
  - [Bump maven-compiler-plugin from 3.9.0 to 3.10.0](https://github.com/premium-minds/pm-webapp-utils/pull/65)

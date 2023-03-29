@@ -53,6 +53,7 @@
  - [Bump maven-scm-provider-gitexe from 1.13.0 to 2.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/95)
  - [Bump maven-scm-publish-plugin from 1.0-beta-2 to 3.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/12)
  - [Bump maven-scm-publish-plugin from 3.0.0 to 3.1.0](https://github.com/premium-minds/pm-webapp-utils/pull/28)
+ - [Bump maven-scm-publish-plugin from 3.1.0 to 3.2.1](https://github.com/premium-minds/pm-webapp-utils/pull/97)
  - [Bump maven-source-plugin from 2.2.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/18)
  - [Bump maven-source-plugin from 3.2.0 to 3.2.1](https://github.com/premium-minds/pm-webapp-utils/pull/20)
  - [Bump nexus-staging-maven-plugin from 1.6.2 to 1.6.8](https://github.com/premium-minds/pm-webapp-utils/pull/17)

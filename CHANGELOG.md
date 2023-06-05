@@ -45,6 +45,7 @@
  - [Bump maven-javadoc-plugin from 3.4.1 to 3.5.0](https://github.com/premium-minds/pm-webapp-utils/pull/90)
  - [Bump maven-release-plugin from 2.4.2 to 2.5.3](https://github.com/premium-minds/pm-webapp-utils/pull/15)
  - [Bump maven-release-plugin from 2.5.3 to 3.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/96)
+ - [Bump maven-release-plugin from 3.0.0 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/105)
  - [Bump maven-scm-provider-gitexe from 1.8.1 to 1.11.2](https://github.com/premium-minds/pm-webapp-utils/pull/9)
  - [Bump maven-scm-provider-gitexe from 1.11.2 to 1.11.3](https://github.com/premium-minds/pm-webapp-utils/pull/46)
  - [Bump maven-scm-provider-gitexe from 1.11.3 to 1.12.0](https://github.com/premium-minds/pm-webapp-utils/pull/50)

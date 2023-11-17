@@ -24,7 +24,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
 /**
  * Class to load resources of web applications

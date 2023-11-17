@@ -20,48 +20,36 @@ package com.premiumminds.webapp.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.InputStream;
-import java.net.URL;
-
-import org.eclipse.jetty.testing.ServletTester;
-
-import org.junit.jupiter.api.BeforeEach;
+import org.eclipse.jetty.server.LocalConnector;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.junit.jupiter.api.Test;
 
 public class ApplicationContextConfigurationTest {
-	private ServletTester tester;
-	
-	@BeforeEach
-	protected void setUp() {
-		tester = new ServletTester();
-		
-		URL url = this.getClass().getResource("/");
-		tester.setResourceBase(url.getPath());
-	}
 
 	@Test
-	public void testSuccessLoad(){
-		tester.addEventListener(new ApplicationContextConfigurationListener());
-		tester.getContext().setInitParameter("app-config", "classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest.properties");
-		try {
-			tester.start();
-			assertTrue(ApplicationContextConfiguration.get().containsKey("application"));
-			assertEquals("test", ApplicationContextConfiguration.get().getProperty("application"));
-			
-	    	WebAppFileLoader loader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest2.properties");
-	    	InputStream stream = loader.load();
-	    	ApplicationContextConfiguration.configure(stream);
-			stream.close();
+	public void testSuccessLoad() throws Exception {
+		Server server = new Server();
+		server.addConnector(new LocalConnector(server));
+		ServletContextHandler context = new ServletContextHandler(server, "/contextPath");
+		context.addEventListener(new ApplicationContextConfigurationListener());
+		context.setInitParameter("app-config", "classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest.properties");
 
-			assertEquals("test2", ApplicationContextConfiguration.get().getProperty("application"));
-			assertEquals("123", ApplicationContextConfiguration.get().getProperty("application2"));
+		server.start();
 
-			tester.stop();
-		} catch (Exception e) {
-			e.printStackTrace();
-			fail(e.getMessage());
+		assertTrue(ApplicationContextConfiguration.get().containsKey("application"));
+		assertEquals("test", ApplicationContextConfiguration.get().getProperty("application"));
+
+		WebAppFileLoader loader = new WebAppFileLoader("classpath:/com/premiumminds/webapp/utils/applicationConfigurationTest2.properties");
+		try (InputStream stream = loader.load()) {
+			ApplicationContextConfiguration.configure(stream);
 		}
+
+		assertEquals("test2", ApplicationContextConfiguration.get().getProperty("application"));
+		assertEquals("123", ApplicationContextConfiguration.get().getProperty("application2"));
+
+		server.stop();
 	}
 }

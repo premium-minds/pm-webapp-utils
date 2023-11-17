@@ -18,8 +18,8 @@
  */
 package com.premiumminds.webapp.utils.mailer;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 
 public abstract class MIMEMessageConfigurator {
 	

@@ -18,6 +18,8 @@
  */
 package com.premiumminds.webapp.utils.mailer;
 
+import com.premiumminds.webapp.utils.mailer.AbstractMailer.Configuration.SMTP;
+import jakarta.mail.Message.RecipientType;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,20 +29,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.Address;
-import javax.mail.BodyPart;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Part;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+import jakarta.activation.DataHandler;
+import jakarta.activation.DataSource;
+import jakarta.activation.FileDataSource;
+import jakarta.mail.Address;
+import jakarta.mail.BodyPart;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Multipart;
+import jakarta.mail.Part;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,8 +118,8 @@ public class SimpleMailer extends AbstractMailer {
 		
 		try {
 			Transport tr = session.getTransport("smtp");
-			if(getConfigurationProperty(Configuration.SMTP.AUTH, "true").equalsIgnoreCase("true")){
-				tr.connect(getConfigurationProperty(Configuration.SMTP.USER), getConfigurationProperty(Configuration.SMTP.PASSWORD));
+			if(getConfigurationProperty(SMTP.AUTH, "true").equalsIgnoreCase("true")){
+				tr.connect(getConfigurationProperty(SMTP.USER), getConfigurationProperty(SMTP.PASSWORD));
 			} else {
 				tr.connect();
 			}
@@ -138,20 +140,20 @@ public class SimpleMailer extends AbstractMailer {
 		try {
 			if (isDebug()) {
 				for (InternetAddress address : convertStringsToAddressess(getList(getDebugAddress()))) {
-					message.addRecipient(javax.mail.Message.RecipientType.TO, address);
+					message.addRecipient(RecipientType.TO, address);
 				}
 			} else {
 				for(String address : tos){
-					message.addRecipient(javax.mail.Message.RecipientType.TO, convertStringToAddress(address));
+					message.addRecipient(RecipientType.TO, convertStringToAddress(address));
 				}
 				if(ccs!=null){
 					for(String address : ccs){
-						message.addRecipient(javax.mail.Message.RecipientType.CC, convertStringToAddress(address));
+						message.addRecipient(RecipientType.CC, convertStringToAddress(address));
 					}
 				}
 				if(bccs!=null){
 					for(String address : bccs){
-						message.addRecipient(javax.mail.Message.RecipientType.BCC, convertStringToAddress(address));
+						message.addRecipient(RecipientType.BCC, convertStringToAddress(address));
 					}
 				}
 			}

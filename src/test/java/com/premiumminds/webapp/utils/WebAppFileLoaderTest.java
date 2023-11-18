@@ -24,7 +24,7 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import org.eclipse.jetty.testing.ServletTester;
+import org.eclipse.jetty.servlet.ServletTester;
 import org.junit.jupiter.api.Test;
 
 public class WebAppFileLoaderTest {

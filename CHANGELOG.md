@@ -69,6 +69,7 @@
  - [Bump maven-source-plugin from 2.2.1 to 3.2.0](https://github.com/premium-minds/pm-webapp-utils/pull/18)
  - [Bump maven-source-plugin from 3.2.0 to 3.2.1](https://github.com/premium-minds/pm-webapp-utils/pull/20)
  - [Bump maven-source-plugin from 3.2.1 to 3.3.0](https://github.com/premium-minds/pm-webapp-utils/pull/103)
+ - [Bump org.apache.maven.plugins:maven-source-plugin from 3.3.0 to 3.3.1](https://github.com/premium-minds/pm-webapp-utils/pull/139)
  - [Bump nexus-staging-maven-plugin from 1.6.2 to 1.6.8](https://github.com/premium-minds/pm-webapp-utils/pull/17)
  - [Bump nexus-staging-maven-plugin from 1.6.8 to 1.6.11](https://github.com/premium-minds/pm-webapp-utils/pull/67)
  - [Bump nexus-staging-maven-plugin from 1.6.11 to 1.6.12](https://github.com/premium-minds/pm-webapp-utils/pull/68)

@@ -59,6 +59,7 @@
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.6.3 to 3.7.0](https://github.com/premium-minds/pm-webapp-utils/pull/145)
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.7.0 to 3.8.0](https://github.com/premium-minds/pm-webapp-utils/pull/154)
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.8.0 to 3.10.0](https://github.com/premium-minds/pm-webapp-utils/pull/159)
+ - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.10.0 to 3.10.1](https://github.com/premium-minds/pm-webapp-utils/pull/168)
  - [Bump maven-release-plugin from 2.4.2 to 2.5.3](https://github.com/premium-minds/pm-webapp-utils/pull/15)
  - [Bump maven-release-plugin from 2.5.3 to 3.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/96)
  - [Bump maven-release-plugin from 3.0.0 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/105)
@@ -92,6 +93,7 @@
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.2.5 to 3.3.0](https://github.com/premium-minds/pm-webapp-utils/pull/148)
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.3.0 to 3.3.1](https://github.com/premium-minds/pm-webapp-utils/pull/152)
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.3.1 to 3.5.0](https://github.com/premium-minds/pm-webapp-utils/pull/160)
+ - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.0 to 3.5.1](https://github.com/premium-minds/pm-webapp-utils/pull/169)
  - [Bump junit from 4.12 to 4.13](https://github.com/premium-minds/pm-webapp-utils/pull/21)
  - [[Security] Bump junit from 4.13 to 4.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/26)
  - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)
@@ -109,6 +111,7 @@
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.10.2 to 5.10.3](https://github.com/premium-minds/pm-webapp-utils/pull/151)
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.10.3 to 5.11.0](https://github.com/premium-minds/pm-webapp-utils/pull/156)
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.11.0 to 5.11.1](https://github.com/premium-minds/pm-webapp-utils/pull/166)
+ - [Bump org.junit.jupiter:junit-jupiter-engine from 5.11.1 to 5.11.2](https://github.com/premium-minds/pm-webapp-utils/pull/167)
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
 
 ### Removed

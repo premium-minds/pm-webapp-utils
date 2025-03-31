@@ -100,6 +100,7 @@
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.3.1 to 3.5.0](https://github.com/premium-minds/pm-webapp-utils/pull/160)
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.0 to 3.5.1](https://github.com/premium-minds/pm-webapp-utils/pull/169)
  - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.1 to 3.5.2](https://github.com/premium-minds/pm-webapp-utils/pull/175)
+ - [Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.2 to 3.5.3](https://github.com/premium-minds/pm-webapp-utils/pull/187)
  - [Bump junit from 4.12 to 4.13](https://github.com/premium-minds/pm-webapp-utils/pull/21)
  - [[Security] Bump junit from 4.13 to 4.13.1](https://github.com/premium-minds/pm-webapp-utils/pull/26)
  - [Bump junit-jupiter-engine from 5.7.0 to 5.7.1](https://github.com/premium-minds/pm-webapp-utils/pull/29)

@@ -48,6 +48,7 @@
  - [Bump org.apache.maven.plugins:maven-compiler-plugin from 3.11.0 to 3.12.1](https://github.com/premium-minds/pm-webapp-utils/pull/125)
  - [Bump org.apache.maven.plugins:maven-compiler-plugin from 3.12.1 to 3.13.0](https://github.com/premium-minds/pm-webapp-utils/pull/137)
  - [Bump org.apache.maven.plugins:maven-compiler-plugin from 3.13.0 to 3.14.0](https://github.com/premium-minds/pm-webapp-utils/pull/182)
+ - [Bump org.apache.maven.plugins:maven-compiler-plugin from 3.14.0 to 3.14.1](https://github.com/premium-minds/pm-webapp-utils/pull/201)
  - [Bump maven-gpg-plugin from 1.5 to 1.6 ](https://github.com/premium-minds/pm-webapp-utils/pull/16)
  - [Bump maven-gpg-plugin from 1.6 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/39)
  - [Bump maven-javadoc-plugin from 2.9.1 to 3.1.1](https://github.com/premium-minds/pm-webapp-utils/pull/11)

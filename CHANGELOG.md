@@ -69,6 +69,7 @@
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.10.1 to 3.11.1](https://github.com/premium-minds/pm-webapp-utils/pull/174)
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.11.1 to 3.11.2](https://github.com/premium-minds/pm-webapp-utils/pull/177)
  - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.11.2 to 3.11.3](https://github.com/premium-minds/pm-webapp-utils/pull/197)
+ - [Bump org.apache.maven.plugins:maven-javadoc-plugin from 3.11.3 to 3.12.0](https://github.com/premium-minds/pm-webapp-utils/pull/202)
  - [Bump maven-release-plugin from 2.4.2 to 2.5.3](https://github.com/premium-minds/pm-webapp-utils/pull/15)
  - [Bump maven-release-plugin from 2.5.3 to 3.0.0](https://github.com/premium-minds/pm-webapp-utils/pull/96)
  - [Bump maven-release-plugin from 3.0.0 to 3.0.1](https://github.com/premium-minds/pm-webapp-utils/pull/105)

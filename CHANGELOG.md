@@ -143,6 +143,7 @@
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.13.2 to 5.13.3](https://github.com/premium-minds/pm-webapp-utils/pull/193)
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.13.3 to 5.13.4](https://github.com/premium-minds/pm-webapp-utils/pull/196)
  - [Bump org.junit.jupiter:junit-jupiter-engine from 5.13.4 to 5.14.3](https://github.com/premium-minds/pm-webapp-utils/pull/226)
+ - [Bump org.junit.jupiter:junit-jupiter-engine from 5.14.3 to 5.14.4](https://github.com/premium-minds/pm-webapp-utils/pull/229)
  - [Bump to junit 5](https://github.com/premium-minds/pm-webapp-utils/pull/27)
 
 ### Removed
